@@ -1,0 +1,3 @@
+INSERT INTO tb_employee (DAILY_INCOME, EMPLOYEE_NAME) VALUES (158.90, 'Juliana Santos');
+INSERT INTO tb_employee (DAILY_INCOME, EMPLOYEE_NAME) VALUES (165.90, 'Fernando Silva');
+INSERT INTO tb_employee (DAILY_INCOME, EMPLOYEE_NAME) VALUES (135.90, 'Fátima Oliveira');
