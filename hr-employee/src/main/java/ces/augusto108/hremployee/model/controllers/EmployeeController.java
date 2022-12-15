@@ -4,10 +4,7 @@ import ces.augusto108.hremployee.model.entities.Employee;
 import ces.augusto108.hremployee.model.services.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,6 +22,16 @@ public class EmployeeController {
     @GetMapping(value = "/all")
     public ResponseEntity<List<Employee>> findAll() {
         return ResponseEntity.ok(employeeService.findAll());
+    }
+
+    @RequestMapping(value = "/save", method = {RequestMethod.POST, RequestMethod.PATCH})
+    public void save(@RequestParam Long id, @RequestParam String name, @RequestParam Double dailyIncome) {
+        employeeService.save(id, name, dailyIncome);
+    }
+
+    @DeleteMapping(value = "/delete/{id}")
+    public void deleteById(@PathVariable Long id) {
+        employeeService.deleteById(id);
     }
 }
 

@@ -22,4 +22,12 @@ public class EmployeeService {
     public List<Employee> findAll() {
         return employeeRepository.findAll();
     }
+
+    public void save(Long id, String name, Double dailyIncome) {
+        employeeRepository.save(new Employee(id, name, dailyIncome));
+    }
+
+    public void deleteById(Long id) {
+        employeeRepository.deleteById(id);
+    }
 }
