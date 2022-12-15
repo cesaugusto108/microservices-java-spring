@@ -1,7 +1,7 @@
 package ces.augusto108.hremployee.model.controllers;
 
 import ces.augusto108.hremployee.model.entities.Employee;
-import ces.augusto108.hremployee.model.repositories.EmployeeRepository;
+import ces.augusto108.hremployee.model.services.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,15 +15,16 @@ import java.util.List;
 @RequestMapping(value = "/employees")
 public class EmployeeController {
     @Autowired
-    private EmployeeRepository employeeRepository;
+    private EmployeeService employeeService;
 
     @GetMapping(value = "/list/{id}")
     public ResponseEntity<Employee> findById(@PathVariable Long id) {
-        return ResponseEntity.of(employeeRepository.findById(id));
+        return ResponseEntity.ok(employeeService.findById(id));
     }
 
     @GetMapping(value = "/all")
     public ResponseEntity<List<Employee>> findAll() {
-        return ResponseEntity.ok(employeeRepository.findAll());
+        return ResponseEntity.ok(employeeService.findAll());
     }
 }
+

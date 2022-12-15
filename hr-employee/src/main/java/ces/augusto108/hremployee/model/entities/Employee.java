@@ -41,6 +41,18 @@ public class Employee implements Serializable {
         return dailyIncome;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDailyIncome(Double dailyIncome) {
+        this.dailyIncome = dailyIncome;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
