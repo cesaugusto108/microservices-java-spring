@@ -2,8 +2,10 @@ package ces.augusto108.hrpayroll;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.ribbon.RibbonClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
+@RibbonClient(name = "hr-employee")
 @EnableFeignClients
 @SpringBootApplication
 public class HrPayrollApplication {

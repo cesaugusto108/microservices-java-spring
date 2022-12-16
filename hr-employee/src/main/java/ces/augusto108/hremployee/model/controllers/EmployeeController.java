@@ -2,7 +2,10 @@ package ces.augusto108.hremployee.model.controllers;
 
 import ces.augusto108.hremployee.model.entities.Employee;
 import ces.augusto108.hremployee.model.services.EmployeeService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,11 +14,18 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "/employees")
 public class EmployeeController {
+    private final static Logger LOGGER = LoggerFactory.getLogger(EmployeeController.class);
+
+    @Autowired
+    private Environment environment;
+
     @Autowired
     private EmployeeService employeeService;
 
     @GetMapping(value = "/list/{id}")
     public ResponseEntity<Employee> findById(@PathVariable Long id) {
+        LOGGER.info("Port: " + environment.getProperty("local.server.port"));
+
         return ResponseEntity.ok(employeeService.findById(id));
     }
 
