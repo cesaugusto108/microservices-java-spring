@@ -13,9 +13,13 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>hr-eureka-server</name>
 	<description>Microservices project (human resources - eureka server)</description>
+<!--	<properties>-->
+<!--		<java.version>11</java.version>-->
+<!--		<spring-cloud.version>2021.0.5</spring-cloud.version>-->
+<!--	</properties>-->
 	<properties>
 		<java.version>11</java.version>
-		<spring-cloud.version>2021.0.5</spring-cloud.version>
+		<spring-cloud.version>Hoxton.SR1</spring-cloud.version>
 	</properties>
 	<dependencies>
 		<dependency>
