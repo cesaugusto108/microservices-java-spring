@@ -18,7 +18,7 @@ public class User implements Serializable {
     @Column(name = "user_name")
     private String name;
 
-    @Column(name = "user_email")
+    @Column(name = "user_email", unique = true)
     private String email;
 
     @Column(name= "user_password")
@@ -60,6 +60,10 @@ public class User implements Serializable {
 
     public Set<Role> getRoles() {
         return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
     }
 
     @Override
