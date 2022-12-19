@@ -43,10 +43,6 @@ public class User implements UserDetails, Serializable {
         return email;
     }
 
-//    public String getPassword() {
-//        return password;
-//    }
-
     public Set<Role> getRoles() {
         return roles;
     }
