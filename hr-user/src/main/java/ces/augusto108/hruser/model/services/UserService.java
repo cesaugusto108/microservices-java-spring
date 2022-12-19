@@ -43,8 +43,8 @@ public class UserService {
         for (String role : roleSet) {
             long roleId = 0L;
 
-            if (role.equals("OPERATOR")) roleId = 1L;
-            if (role.equals("ADMIN")) roleId = 2L;
+            if (role.equals("ROLE_OPERATOR")) roleId = 1L;
+            if (role.equals("ROLE_ADMIN")) roleId = 2L;
 
             Role r = new Role(roleId, role);
 
