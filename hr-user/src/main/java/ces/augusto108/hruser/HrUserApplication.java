@@ -17,10 +17,6 @@ public class HrUserApplication implements CommandLineRunner {
 		SpringApplication.run(HrUserApplication.class, args);
 	}
 
-	/*
-	This is just for test and demonstration of BCrypt.
-	One of the generated hashes is used in data.sql as a mock password.
-	*/
 	@Override
 	public void run(String... args) throws Exception {
 		System.out.println("BCrypt: " + passwordEncoder.encode("p@ZZw0Rd"));
