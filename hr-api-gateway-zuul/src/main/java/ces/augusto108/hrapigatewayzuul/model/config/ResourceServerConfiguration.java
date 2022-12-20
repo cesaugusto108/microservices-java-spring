@@ -14,7 +14,13 @@ import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter {
     private static final String[] PUBLIC_ROUTE = {"/hr-oauth/oauth/token"};
     private static final String[] OPERATOR_ROUTE = {"/hr-employee/**"};
-    private static final String[] ADMIN_ROUTE = {"/hr-payroll/**", "/hr-user/**"};
+    private static final String[] ADMIN_ROUTE = {
+            "/hr-payroll/**",
+            "/hr-user/**",
+            "/actuator/**",
+            "/hr-employee/actuator/**",
+            "/hr-oauth/actuator/**"
+    };
 
     @Autowired
     private JwtTokenStore jwtTokenStore;
